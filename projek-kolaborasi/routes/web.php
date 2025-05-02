@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::controller(AuthController::class)->group(function () {
+    // Routing halaman login
+    Route::get('/login', 'index')->name('login');
+    Route::post('/login', 'authenticate')->name('login.submit');
+});
+
+
