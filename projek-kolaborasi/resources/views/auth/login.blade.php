@@ -1,6 +1,6 @@
 @extends('auth.latar-login')
 
-@section('judul_halaman', 'Login | Coba Kolaborasi')
+@section('judul_halaman', 'Login | Jelajah Malang')
 
 @section('konten')
     <div class="card shadow-lg border-0 rounded-lg mt-5">
