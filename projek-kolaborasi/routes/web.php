@@ -16,14 +16,13 @@ use App\Http\Controllers\WisataController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
     return view('index');
 });
 
 Route::get('/master', function () {
     return view('master');
-});
+});;
 
 Route::controller(AuthController::class)->group(function () {
     // Routing halaman login
