@@ -31,9 +31,14 @@ class AuthController extends Controller
 
             return redirect('/data_wisata');
         };
+        
 
         return back()->withErrors([
             'email' => 'Kredensial yang diberikan tidak cocok dengan data kami.',
         ])->onlyInput('email');
+    }
+
+    public function pageindex(){
+        return view ('index');
     }
 }

@@ -16,13 +16,9 @@ use App\Http\Controllers\WisataController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [AuthController::class, 'pageindex']);
 
-Route::get('/master', function () {
-    return view('master');
-});;
+Route::get('/master', [WisataController::class, 'master']);
 
 Route::controller(AuthController::class)->group(function () {
     // Routing halaman login
@@ -30,28 +26,21 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/login', 'authenticate')->name('login.submit');
 });
 
-Route::controller(WisataController::class)->group(function () {
-    // Routing halaman data wisata
-    Route::get('/data_wisata', 'index');
 
-    // Routing tambah wisata
-    Route::get('/tambah_wisata', 'create');
-    Route::post('/tambah_wisata', 'store');
-
-    // Routing ubah wisata
-    Route::get('/ubah_wisata/{id}', 'edit');
-    Route::post('/ubah_wisata/{id}', 'update')->name('edit_wisata');
-
-    // Routing hapus wisata
-    Route::get('/hapus_wisata/{id}', 'destroy');
-});
 
 Route::middleware(['auth'])->group(function () {
-    
+    Route::get('/data_wisata', [WisataController::class, 'index']);
+    Route::get('/tambah_wisata', [WisataController::class, 'create']);
+    Route::post('/tambah_wisata', [WisataController::class, 'store']);
+    Route::get('/ubah_wisata/{id}', [WisataController::class, 'edit']);
+    Route::post('/ubah_wisata/{id}', [WisataController::class, 'update'])->name('edit_wisata');
+    Route::get('/hapus_wisata/{id}', [WisataController::class, 'destroy']);
 });
+
 
 //routing halaman detail wisata
 Route::get('/detail_wisata/{slug}', [WisataController::class, 'show'])->name('wisata.detail');
+
 
 // Routing halaman logout
 Route::post('/logout', function () {

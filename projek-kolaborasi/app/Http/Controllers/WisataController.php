@@ -11,6 +11,15 @@ class WisataController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function master()
+    {
+    
+    
+        $wisata = Wisata::all(); 
+         return view('master', compact('wisata'));
+    }
+
+
     public function index()
     {
         $wisata = Wisata::all(); 
