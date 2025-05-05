@@ -59,7 +59,7 @@
               <li><a href="#">Wisata Pantai</a></li>
             </ul>
           </li>
-          <li><a href="#contact">Login</a></li>
+          <li><a href="/login">Login</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -82,11 +82,6 @@
           <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
             <h1>Tempat Wisata Terbaik Di <span>KOTA MALANG</span></h1>
 
-          @auth
-              <p>Welcome, {{ Auth::user()->name }}</p>
-          @else
-              <p>Please login</p>
-          @endauth
             <p>Ingin merasakan sensasi udara sejuk dan menyegarkan? Berlibur ke Malang bisa jadi solusinya. Daerah dengan julukan kota apel ini juga punya banyak tempat wisata yang seru untuk dikunjungi. Bagi Anda yang tertarik untuk menghabiskan waktu libur ke daerah ini,
                berikut JELAJAH MALANG merangkum berbagai tempat wisata di Malang yang menarik dikunjungi.</p>
             <div class="d-flex">

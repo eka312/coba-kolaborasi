@@ -28,7 +28,7 @@ Route::controller(AuthController::class)->group(function () {
 
 
 
-Route::middleware(['auth'])->group(function () {
+Route::controller(WisataController::class)->group(function () {
     Route::get('/data_wisata', [WisataController::class, 'index']);
     Route::get('/tambah_wisata', [WisataController::class, 'create']);
     Route::post('/tambah_wisata', [WisataController::class, 'store']);

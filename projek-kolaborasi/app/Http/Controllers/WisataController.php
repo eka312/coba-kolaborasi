@@ -15,8 +15,6 @@ class WisataController extends Controller
      */
     public function master()
     {
-    
-    
         $wisata = Wisata::all(); 
          return view('master', compact('wisata'));
     }
