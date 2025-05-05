@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Wisata;
+use App\Models\Kategori;
+
 
 class WisataController extends Controller
 {
@@ -22,7 +24,8 @@ class WisataController extends Controller
      */
     public function create()
     {
-        return view('wisata.tambah_wisata');
+        $kategori = Kategori::all();
+        return view('wisata.tambah_wisata', compact('kategori'));
     }
 
     /**
@@ -34,6 +37,7 @@ class WisataController extends Controller
             'gambar' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
             'judul' => 'required',
             'deskripsi' => 'required',
+            'kategori_id' => 'required|exists:kategori,id',
             'lokasi_url' => 'nullable|url',
         ]);
 
@@ -55,6 +59,7 @@ class WisataController extends Controller
             'judul' => $request->judul,
             'slug' => $slug,
             'deskripsi' => $request->deskripsi,
+            'kategori_id' => $request->kategori_id,
             'lokasi_url' => $request->lokasi_url,
         ]);
 
@@ -78,7 +83,8 @@ class WisataController extends Controller
     {
          // untuk mengambil data wisata berdasarkan kolom id_wisata
          $wisata = Wisata::findOrFail($id);
-         return view('wisata.ubah_wisata', compact('wisata'));
+         $kategori = Kategori::all();
+         return view('wisata.ubah_wisata', compact('wisata', 'kategori'));
     }
 
     /**
@@ -91,6 +97,7 @@ class WisataController extends Controller
         $request->validate([
             'judul' => 'required',
             'deskripsi' => 'required',
+            'kategori_id' => 'required|exists:kategori,id',
             'lokasi_url' => 'nullable|url',
             'gambar' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
@@ -117,6 +124,7 @@ class WisataController extends Controller
         $wisata->judul = $request->judul;
         $wisata->slug = $slug;
         $wisata->deskripsi = $request->deskripsi;
+        $wisata->kategori_id = $request->kategori_id;
         $wisata->lokasi_url = $request->lokasi_url;
         $wisata->save();
     
