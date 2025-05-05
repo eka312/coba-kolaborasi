@@ -46,7 +46,7 @@
                                 </td>
                                 <td>{{$item->judul}}</td>
                                 <td>{{$item->deskripsi}}</td>
-                                <td>{{ $item->kategori }}</td>
+                                <td>{{$item->kategori->nama_kategori }}</td>
                                 <td>{{$item->lokasi_url}}</td>
                                 <td>
                                     <a class="btn btn-warning btn-sm mb-1" href="/ubah_wisata/{{$item->id_wisata}}" role="button"><i class="fas fa-edit me-2"></i>ubah</a>
