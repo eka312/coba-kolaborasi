@@ -26,4 +26,9 @@ class Wisata extends Model
             $wisata->slug = Str::slug($wisata->judul);
         });
     }
+    public function kategori()
+        {
+            return $this->belongsTo(Kategori::class, 'kategori_id');
+        }
+
 }

@@ -59,15 +59,7 @@
               <li><a href="#">Wisata Pantai</a></li>
             </ul>
           </li>
-          <li>
-            <small style="color: blue;">{{ Auth::check() ? 'User is logged in' : 'User is guest' }}</small>
-          </li>
-          @guest
-            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-          @else
-            <li class="nav-item"><a class="nav-link" href="/data_wisata">Masuk</a></li>
-          @endguest
-          
+          <li><a href="#contact">Login</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
