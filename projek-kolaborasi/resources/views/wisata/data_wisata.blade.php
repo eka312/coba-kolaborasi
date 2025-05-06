@@ -38,11 +38,8 @@
                             <tr>
                                 <th scope="row">{{$loop->iteration}}</th>
                                 <td>
-                                    @if($item->gambar)
-                                        <img src="{{ asset('image_wisata/' . $item->gambar) }}" alt="Gambar wisata" width="250">
-                                    @else
-                                        <p>Tidak ada gambar</p>
-                                    @endif
+                                    <img src="{{ asset('image-wisata/' . $item->gambar) }}" alt="Gambar wisata" width="250">
+                                    
                                 </td>
                                 <td>{{$item->judul}}</td>
                                 <td>{{$item->deskripsi}}</td>

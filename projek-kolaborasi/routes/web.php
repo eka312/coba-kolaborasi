@@ -28,13 +28,13 @@ Route::controller(AuthController::class)->group(function () {
 
 
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/data_wisata', [WisataController::class, 'index']);
-    Route::get('/tambah_wisata', [WisataController::class, 'create']);
-    Route::post('/tambah_wisata', [WisataController::class, 'store']);
-    Route::get('/ubah_wisata/{id}', [WisataController::class, 'edit']);
-    Route::post('/ubah_wisata/{id}', [WisataController::class, 'update'])->name('edit_wisata');
-    Route::get('/hapus_wisata/{id}', [WisataController::class, 'destroy']);
+Route::controller(WisataController::class)->group(function () {
+    Route::get('/data_wisata','index');
+    Route::get('/tambah_wisata','create');
+    Route::post('/tambah_wisata','store');
+    Route::get('/ubah_wisata/{id}','edit');
+    Route::post('/ubah_wisata/{id}','update')->name('edit_wisata');
+    Route::get('/hapus_wisata/{id}','destroy');
 });
 
 
