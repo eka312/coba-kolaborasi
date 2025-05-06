@@ -5,10 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Kategori;
-<<<<<<< HEAD
 use Illuminate\Support\Str;
-=======
->>>>>>> d0ce2d65f9b97e917cf320262c942ac67c6951f8
 
 
 class KategoriSeeder extends Seeder
@@ -18,7 +15,6 @@ class KategoriSeeder extends Seeder
      */
     public function run(): void
     {
-<<<<<<< HEAD
       
 
         Kategori::insert([
@@ -42,13 +38,3 @@ class KategoriSeeder extends Seeder
 
     }
 }
-=======
-        Kategori::insert([
-            ['nama_kategori' => 'Wisata Alam'],
-            ['nama_kategori' => 'Wisata Budaya & Sejarah'],
-            ['nama_kategori' => 'Kuliner Khas Malang'],
-            ['nama_kategori' => 'Wisata Pantai'],
-        ]);
-    }
-}
->>>>>>> d0ce2d65f9b97e917cf320262c942ac67c6951f8
