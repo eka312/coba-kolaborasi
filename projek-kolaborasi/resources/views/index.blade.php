@@ -60,7 +60,7 @@
               <li><a href="{{ url('/detail_kategori/wisata-pantai') }}">Wisata Pantai</a></li>
             </ul>
           </li>
-          <li><a href="/login">login</a></li>
+          <li><a href="/login">Login</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
