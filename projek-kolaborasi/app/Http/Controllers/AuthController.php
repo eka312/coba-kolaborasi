@@ -8,6 +8,8 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Wisata;
+use App\Models\Kategori;
 
 class AuthController extends Controller
 {
@@ -16,6 +18,7 @@ class AuthController extends Controller
      */
     public function index()
     {
+       
         return view('auth.login');
     }
 
@@ -39,6 +42,8 @@ class AuthController extends Controller
     }
 
     public function pageindex(){
-        return view ('index');
+        $wisata = Wisata::all(); 
+        $kategori = Kategori::all();
+        return view ('index', compact('wisata', 'kategori'));
     }
 }

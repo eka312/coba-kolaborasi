@@ -83,6 +83,13 @@ class WisataController extends Controller
         return view('wisata.detail_wisata', compact('wisata'));
     }
 
+    public function wisataByKategori($slug)
+    {
+        $kategori = Kategori::where('slug', $slug)->firstOrFail();
+        $wisata = Wisata::where('kategori_id', $kategori->id)->get();
+
+        return view('wisata.detail_kategori', compact('kategori', 'wisata'));
+    }
     /**
      * Show the form for editing the specified resource.
      */

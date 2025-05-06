@@ -51,15 +51,16 @@
           <li><a href="#hero" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#gallery">Gallery</a></li>
-          <li class="dropdown"><a href="#"><span>Pilihan Wisata</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown">
+            <a href="#"><span>Pilihan Wisata</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Wisata Alam</a></li>
-              <li><a href="#">Wisata Budaya & Sejarah</a></li>
-              <li><a href="#">Kuliner Khas Malang</a></li>
-              <li><a href="#">Wisata Pantai</a></li>
+              <li><a href="{{ url('/detail_kategori/wisata-alam') }}">Wisata Alam</a></li>
+              <li><a href="{{ url('/detail_kategori/wisata-sejarah-budaya') }}">Wisata Budaya & Sejarah</a></li>
+              <li><a href="{{ url('/detail_kategori/kuliner-malang') }}">Kuliner Khas Malang</a></li>
+              <li><a href="{{ url('/detail_kategori/wisata-pantai') }}">Wisata Pantai</a></li>
             </ul>
           </li>
-          <li><a href="/login">Login</a></li>
+          <li><a href="/login">login</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -184,55 +185,19 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row g-0">
-
+          
           <div class="col-lg-3 col-md-4">
+          @foreach ($wisata as $item)
             <div class="gallery-item">
-              <a href="Bootslander/assets/img/gallery/gallery-1.jpeg" class="glightbox" data-gallery="images-gallery">
-                <img src="Bootslander/assets/img/gallery/gallery-1.jpeg" alt="" class="img-fluid">
+              <a href="{{ asset('Bootslander/assets/img/gallery/gallery-1.jpeg')}}" class="glightbox" data-gallery="images-gallery">
+                <img src="{{ asset('image-wisata/' . $item->gambar) }}" alt="Gambar wisata" width="250">
               </a>
             </div>
+          @endforeach
           </div><!-- End Gallery Item -->
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="Bootslander/assets/img/gallery/gallery-2.jpeg" class="glightbox" data-gallery="images-gallery">
-                <img src="Bootslander/assets/img/gallery/gallery-2.jpeg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
+          
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="Bootslander/assets/img/gallery/gallery-3.jpeg" class="glightbox" data-gallery="images-gallery">
-                <img src="Bootslander/assets/img/gallery/gallery-3.jpeg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="Bootslander/assets/img/gallery/gallery-4.jpeg" class="glightbox" data-gallery="images-gallery">
-                <img src="Bootslander/assets/img/gallery/gallery-4.jpeg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div><!-- End Gallery Item -->
-
-          <!-- <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="Bootslander/assets/img/gallery/gallery-5.jpeg" class="glightbox" data-gallery="images-gallery">
-                <img src="Bootslander/assets/img/gallery/gallery-5.jpeg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="Bootslander/assets/img/gallery/gallery-6.jpeg" class="glightbox" data-gallery="images-gallery">
-                <img src="Bootslander/assets/img/gallery/gallery-6.jpeg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-        </div> -->
 
       </div>
 

@@ -14,8 +14,7 @@ class Wisata extends Model
     protected $guarded = [];
     public $timestamps = false;
 
-    protected static function boot()
-    {
+    protected static function boot(){
         parent::boot();
 
         static::creating(function ($wisata) {
@@ -26,9 +25,10 @@ class Wisata extends Model
             $wisata->slug = Str::slug($wisata->judul);
         });
     }
-    public function kategori()
-        {
-            return $this->belongsTo(Kategori::class, 'kategori_id');
-        }
+
+    public function kategori(){
+        return $this->belongsTo(Kategori::class, 'kategori_id');
+    }
+
 
 }

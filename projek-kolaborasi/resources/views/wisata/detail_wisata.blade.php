@@ -57,20 +57,17 @@
             </header>
             <main class="main">
                 <!-- konten -->
-                <section id="konten"> 
-                    <div class="container pt-5 text-white">
+                <section id="konten" class="gallery section hero section dark-background"> 
+                    <div class="container pt-5 ">
                         <div class="row">
                             <div class="col-7">
-                                <img src="{{ asset('image_projek/' . $projek->gambar) }}" class="img-fluid" alt="{{ $projek->judul }}">
+                                <img src="{{ asset('image-wisata/' . $wisata->gambar) }}" class="img-fluid w-100" alt="{{ $wisata->judul }}">
                             </div>
                             <div class="col-5 ">
-                                <h2 class="text-capitalize mb-3">{{ $projek->judul }}</h3>
-                                <p class="mb-4">{{ $projek->deskripsi }}</p>
-                                @if($projek->demo_url)
-                                    <a href="{{ $projek->demo_url }}" class="btn btn-primary btn-lg" target="_blank">Demo</a>
-                                @else
-                                    <button class="btn btn-secondary btn-lg" disabled>tidak tersedia</button>
-                                @endif
+                                <h2 class="text-capitalize mb-3">{{ $wisata->judul }}</h3>
+                                <p class="mb-4">{{ $wisata->deskripsi }}</p>
+                                <a href="{{ $wisata->demo_url }}" class="btn btn-primary btn-lg" target="_blank">Demo</a>
+                                
                             </div>
                         </div>
                     </div>

@@ -68,47 +68,41 @@
   </header>
 
   <main class="main">
-<!-- Hero Section -->
-<section id="hero" class="hero section dark-background">
-      <img src="Bootslander/assets/img/hero-bg-2.jpg" alt="" class="hero-bg">
+    <section id="gallery" class="gallery section hero section dark-background">
 
-      <div class="container">
-        <div class="row gy-4 justify-content-between">
-          <div class="col-lg-4 order-lg-last wisata1-img w-50" data-aos="zoom-out" data-aos-delay="100">
-            <img src="Bootslander/assets/img/wisata1.png" class="img-fluid animated" alt="">
+      <div class="container ">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>{{ $kategori->nama_kategori }} Kami</h2>
+          <div><span>Silahkan Cek </span> <span class="description-title">Rekomendasi Kami</span></div>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="row g-4">
+            @foreach($wisata as $item)
+            <div class="col-lg-3 col-md-4">
+              <div class="gallery-item">
+                <div class="card" style="width: 18rem;">
+                  <img src="{{ asset('image-wisata/' . $item->gambar) }}" alt="Gambar wisata" class="card-img-top" >
+                  <div class="card-body">
+                    <h5 class="card-title fs-4"> {{$item->judul}}</h5>
+                    <p class="card-text text-black fs-6"> {{ Str::limit($item->deskripsi, 100) }} </p>
+                    <a href="{{ route('wisata.detail', $item->slug) }}" class="btn btn-primary">Selengkapnya</a>
+                  </div>
+                </div>
+                
+              </div>
+            </div><!-- End Gallery Item -->
+            @endforeach
           </div>
-
-          <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
-            <h1>Tempat Wisata Terbaik Di <span>KOTA MALANG</span></h1>
-
-            <p>Ingin merasakan sensasi udara sejuk dan menyegarkan? Berlibur ke Malang bisa jadi solusinya. Daerah dengan julukan kota apel ini juga punya banyak tempat wisata yang seru untuk dikunjungi. Bagi Anda yang tertarik untuk menghabiskan waktu libur ke daerah ini,
-               berikut JELAJAH MALANG merangkum berbagai tempat wisata di Malang yang menarik dikunjungi.</p>
-            <div class="d-flex">
-              <a href="#about" class="btn-get-started">Get Started</a>
-              <a href="https://youtu.be/uu1SoPibQy0?si=lv161fikf8dBOrPn" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-            </div>
-          </div>
-
         </div>
       </div>
+      
 
-      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
-        <defs>
-          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-        </defs>
-        <g class="wave1">
-          <use xlink:href="#wave-path" x="50" y="3"></use>
-        </g>
-        <g class="wave2">
-          <use xlink:href="#wave-path" x="50" y="0"></use>
-        </g>
-        <g class="wave3">
-          <use xlink:href="#wave-path" x="50" y="9"></use>
-        </g>
-      </svg>
+    </section><!-- /Gallery Section -->
 
-    </section><!-- /Hero Section -->
-    </main>
+  </main>
   <footer id="footer" class="footer dark-background">
 
     <div class="container footer-top">
